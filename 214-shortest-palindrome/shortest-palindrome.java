@@ -23,11 +23,13 @@ class Solution {
         String rev=revsb.toString();
         String pat= s+"#"+rev;
         int n=s.length();
-        int[] lps=new int[n*2+1];
+        int m=pat.length();
+        int[] lps=new int[m];//m=n*2+1
         givelps(pat,lps);
-        
-        int last=lps[n*2+1-1];System.out.println(last);
-        String revv=new StringBuilder(s.substring(last)).reverse().toString();
-        return revv+s;
+         // this gives the index from which the string s has to add its substring to make palindrome from back side of string.
+        int last=lps[m-1];// System.out.println(last); 
+        // so we need to rev substring and add infront of string  to make palindrome 
+        String revsub=new StringBuilder(s.substring(last)).reverse().toString();
+        return revsub+s;
     }
 }
