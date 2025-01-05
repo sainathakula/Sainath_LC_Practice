@@ -1,11 +1,10 @@
 class Solution {
     public String shiftingLetters(String s, int[] shifts) {
         int n=s.length();
-        int n1=shifts.length;
         // Calculate the suffix sum and for each i we should make the no.of shifts.
-        int[] sufsum=new int[n1];
-        sufsum[n1-1]=shifts[n1-1]%26;
-        for(int i=n1-2;i>=0;i--){
+        int[] sufsum=new int[n];
+        sufsum[n-1]=shifts[n-1]%26;
+        for(int i=n-2;i>=0;i--){
             sufsum[i]=(shifts[i]+sufsum[i+1])%26;
         }
         // System.out.println(Arrays.toString(sufsum));
