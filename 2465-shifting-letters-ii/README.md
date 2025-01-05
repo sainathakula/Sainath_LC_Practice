@@ -34,7 +34,8 @@ Finally, shift the characters from index 1 to index 1 forward. Now s = &quot;cat
 	<li><code>s</code> consists of lowercase English letters.</li>
 </ul>
 
-
+<p>&nbsp;</p>
+<h1> Solution Approach </h1>
 <h1>Intuition</h1>
     <p>
         The problem states that we can apply a forward or backward shift to the characters of a string 
@@ -63,9 +64,9 @@ Finally, shift the characters from index 1 to index 1 forward. Now s = &quot;cat
         <li>For each shift operation, which has a <code>start</code>, <code>end</code>, and <code>direction</code>, 
             update the difference array:</li>
         <ul>
-            <li>If the direction is forward, the value is <code>+1</</code>, and if backward, the value is <code>-1</code>.</li>
-            <li>Update the difference array at <code>diff[start]</code> by adding the direction.</li>
-            <li>Update <code>diff[end]</code> by subtracting the direction.</li>
+            <li>If the direction is forward, the value is <code>+1</</code>, and if backward, the value is <code>-1</code> .</li>
+	    <li>Update the difference array at <code>diff[start]</code> by adding the direction. </li>
+	    <li>Update <code>diff[end]</code> by subtracting the direction.</li>
         </ul>
         <li>Finally, calculate the cumulative sum of the difference array to obtain the actual shift values for each index.</li>
         <li>Once the net shift values are calculated, apply them to the string, adjusting the characters accordingly.</li>
