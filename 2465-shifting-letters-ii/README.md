@@ -33,6 +33,8 @@ Finally, shift the characters from index 1 to index 1 forward. Now s = &quot;cat
 	<li><code>0 &lt;= direction<sub>i</sub> &lt;= 1</code></li>
 	<li><code>s</code> consists of lowercase English letters.</li>
 </ul>
+
+
 <h1>Intuition</h1>
     <p>
         The problem states that we can apply a forward or backward shift to the characters of a string 
@@ -41,24 +43,20 @@ Finally, shift the characters from index 1 to index 1 forward. Now s = &quot;cat
     <p>
         The basic idea is to determine the shift values for each index in the given string.
     </p>
-
     <h2>Approach</h2>
     <p>
         A brute force solution leads to a Time Limit Exceeded (TLE) error due to the inefficiency of directly applying the shifts. 
         Let's explore a more optimal solution using a <strong>difference array</strong>.
     </p>
-
     <h3>Optimal Approach: Using a Difference Array</h3>
     <p>
         The difference array is a technique that efficiently computes relative changes in an array.
     </p>
-
     <h4>How the Difference Array Works</h4>
     <p>
         This method is based on the concept of relative change. We know the starting value, and the remaining values are 
         computed based on previous values.
     </p>
-
     <ul>
         <li>Create a new array of size <code>n+1</code> where <code>n</code> is the length of the string. 
             The extra space helps with handling the last index without out-of-bounds errors.</li>
@@ -74,7 +72,6 @@ Finally, shift the characters from index 1 to index 1 forward. Now s = &quot;cat
         <li>If a negative shift occurs, convert it to a positive value (as alphabet shifts cycle every 26 characters) 
             and apply the forward shift.</li>
     </ul>
-
     <h2>Time and Space Complexity</h2>
     <h3>Time Complexity</h3>
     <p>
@@ -84,7 +81,6 @@ Finally, shift the characters from index 1 to index 1 forward. Now s = &quot;cat
         <li><code>n</code> is the length of the string.</li>
         <li><code>m</code> is the number of shift operations.</li>
     </ul>
-
     <h3>Space Complexity</h3>
     <p>
         The space complexity is <strong>O(n)</strong> for the difference array.
