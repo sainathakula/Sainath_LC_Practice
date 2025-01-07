@@ -1,6 +1,7 @@
 class Solution {
     public List<String> stringMatching(String[] words) {
         List<String> res=new ArrayList<>();
+        Arrays.sort(words, (a, b) -> Integer.compare(a.length(), b.length()));
         int n=words.length;
         for(int i=0;i<n;i++){
             String pat=words[i];
